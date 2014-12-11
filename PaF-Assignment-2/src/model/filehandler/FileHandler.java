@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-package model;
+package model.filehandler;
 
 /**
  *
  * @author Rory
  */
-public class DataHandler {
+public class FileHandler {
     
 }
