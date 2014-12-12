@@ -6,10 +6,27 @@
 
 package model.filehandler;
 
+import java.io.File;
+import model.datahandler.Pattern;
+
 /**
  *
  * @author Rory
  */
 public class FileHandler {
+    public FileHandler(){
+        
+    }
     
+    public String checkFileFormat(String file){
+        
+    }
+    
+    public boolean importFile(File file){
+        
+    }
+    
+    public boolean exportFile(String name, String type, String path, Pattern pattern){
+        
+    }
 }

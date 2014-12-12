@@ -14,14 +14,15 @@ import java.util.ArrayList;
  * @author Rory
  */
 public class Pattern {
-    private String problem, solution, consequences;
+    private String name, problem, solution, consequences;
     private BufferedImage image;
 
     private ArrayList<Pattern> allRelatedPatterns = new ArrayList<>();
     private ArrayList<Context> allContexts = new ArrayList<>();
     private ArrayList<Participant> allParticipants = new ArrayList<>();
     
-    public Pattern(String problem, String solution, String consequences, BufferedImage image) {
+    public Pattern(String name, String problem, String solution, String consequences, BufferedImage image) {
+        this.name = name;
         this.problem = problem;
         this.solution = solution;
         this.consequences = consequences;
@@ -130,5 +131,19 @@ public class Pattern {
             }
         }
         return s;
+    }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
     }
 }
