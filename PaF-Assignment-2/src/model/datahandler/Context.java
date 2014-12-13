@@ -10,7 +10,7 @@ package model.datahandler;
  *
  * @author Rory
  */
-abstract class Context {
+public abstract class Context {
     protected String name;
     
     public String getName(){

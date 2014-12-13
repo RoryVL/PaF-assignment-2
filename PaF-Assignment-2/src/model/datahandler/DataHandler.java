@@ -38,21 +38,21 @@ public class DataHandler {
         }
         return false;
     }
-    
-    public boolean addPattern(String name, String problem, String solution, String consequences, BufferedImage image){
-        if(allPatterns.add(new Pattern(name, problem, solution, consequences, image))){
-            return true;
-        } else {
-            return false;
+
+    public boolean addPattern(String name, String problem, String solution, 
+                                        String consequences, BufferedImage image){
+        for(Pattern p : allPatterns){
+            if(p.getName().equals(name))
+                return false;
         }
+        allPatterns.add(new Pattern(name, problem, solution, consequences, image));
+        return true;
     }
     
     public boolean deletePattern(String name){
-        for (Pattern p: allPatterns){
-            if(p.getName().equals(name)){
-                allPatterns.remove(p);
-                return true;
-            }
+        for(Pattern p : allPatterns){
+            if(p.getName().equals(name))
+                return allPatterns.remove(p);
         }
         return false;
     }

@@ -23,8 +23,7 @@ public class FileHandler {
     }
     
     public boolean importFile(String path){
-        @SuppressWarnings("UnusedAssignment")
-        ObjectImporter i = new Importer() {};
+        Importer i = new TextFileImporter();
         String format = checkFileFormat(path);
         if(format.equals("obj")){
             i = new ObjectImporter();
@@ -37,6 +36,14 @@ public class FileHandler {
     }
     
     public boolean exportFile(String name, String type, String path, Pattern pattern){
-        
+    	Exporter e = new TextFileExporter();
+    	if (type.equals("textfile")){
+    		e = new TextFileExporter();
+    	} else if (type.equals("objectfile")){
+    		e = new ObjectExporter();
+    	} else {
+    		return false;
+    	}
+    	return e.exportFile(name, path, pattern);
     }
 }

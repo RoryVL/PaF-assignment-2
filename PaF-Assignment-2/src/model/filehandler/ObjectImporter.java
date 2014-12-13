@@ -9,6 +9,12 @@ package model.filehandler;
  *
  * @author Izak
  */
-public class ObjectImporter {
+public class ObjectImporter extends Importer {
+
+	@Override
+	public boolean importFile(String path) {
+		// TODO Auto-generated method stub
+		return false;
+	}
    
 }

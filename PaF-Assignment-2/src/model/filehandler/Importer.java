@@ -15,4 +15,5 @@ public abstract class Importer {
         
     }
     
+    public abstract boolean importFile(String path);
 }

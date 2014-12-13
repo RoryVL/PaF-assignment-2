@@ -5,6 +5,8 @@
  */
 package model.filehandler;
 
+import model.datahandler.Pattern;
+
 /**
  *
  * @author Izak
@@ -15,4 +17,5 @@ public abstract class Exporter {
         
     }
     
+    public abstract boolean exportFile(String name,String path, Pattern pattern);
 }

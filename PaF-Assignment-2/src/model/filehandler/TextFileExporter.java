@@ -5,10 +5,18 @@
  */
 package model.filehandler;
 
+import model.datahandler.Pattern;
+
 /**
  *
  * @author Izak
  */
-public class TextFileExporter {
-    
+public class TextFileExporter extends Exporter {
+
+	@Override
+	public boolean exportFile(String name, String path, Pattern pattern) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
