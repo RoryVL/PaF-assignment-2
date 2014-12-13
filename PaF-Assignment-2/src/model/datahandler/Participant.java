@@ -27,17 +27,14 @@ public class Participant {
         this.isAbstract = isAbstract;
     }
     
-    public boolean addSubject(String name, String visibility, boolean isStatic, 
-                                                boolean isAbstract, String type){
+    public boolean addSubject(String type, String name, String visibility, boolean isStatic, 
+                                                boolean isAbstract){
         for(Subject s : allSubjects){
             if(s.getName().equals(name))
                 return false;
         }
-        if(type.equals("Method"))
-            allSubjects.add(new Method(name, visibility, isStatic, isAbstract));
-        else if(type.equals("Attribute"))
-            allSubjects.add(new Attribute(name, visibility, isStatic, isAbstract));
-        return true;
+        Subject s = new Subject(type, name, visibility, isStatic, isAbstract);
+        return allSubjects.add(s);
     }
     
     public boolean deleteSubject(String name){

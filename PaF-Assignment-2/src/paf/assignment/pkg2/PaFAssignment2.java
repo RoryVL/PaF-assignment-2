@@ -8,6 +8,7 @@ package paf.assignment.pkg2;
 
 import model.Facade;
 import model.datahandler.Context;
+import model.datahandler.Participant;
 import model.datahandler.Pattern;
 import model.datahandler.Purpose;
 import model.datahandler.Scope;
@@ -26,14 +27,21 @@ public class PafAssignment2 {
 		Facade f = new Facade();
 		System.out.println("Test");
 		
-		Context c1 = new Scope("scope1");
-		Context c2 = new Purpose("purpose");
-		Pattern p = new Pattern("pName", "pProblem", "pSolution", "pConsequences", null);
+		/*Context c1 = new Scope("scope1");
+		Context c2 = new Purpose("purpose1");
+                Pattern p = new Pattern("pName", "pProblem", "pSolution", "pConsequences", null);
 		p.addContext(c1);
 		p.addContext(c2);
+                p.addParticipant("p1Name", "p1Visibility", false, false, false);
+		p.addParticipant("p2Name", "p2Visibility", false, false, false);
+		p.getAllParticipants().get(0).addRelation("subclass", p.getAllParticipants().get(1));
+                p.getAllParticipants().get(0).addSubject("method", "methodName", "methodVisibility", false, false);
+                p.getAllParticipants().get(0).addSubject("attribute", "attributeName", "attributeVisibility", false, false);
+                
+                f.getFileHandler().exportFile("test", "objectfile", "C:\\Users\\Izak\\Desktop", p);*/
+                
+                f.getFileHandler().importFile("C:\\Users\\Izak\\Desktop\\name.obj");
 		
-		
-		
-		}
+	}
 
 }

@@ -10,10 +10,18 @@ package model.datahandler;
  *
  * @author Rory
  */
-abstract class Subject {
-    protected String name, visibility;
-    protected boolean isStatic, isAbstract;
+public class Subject {
+    private String type, name, visibility;
+    private boolean isStatic, isAbstract;
 
+    public Subject(String type, String name, String visibility, boolean isStatic, boolean isAbstract){
+        this.type = type;
+        this.name = name;
+        this.visibility = visibility;
+        this.isStatic = isStatic;
+        this.isAbstract = isAbstract;
+    }
+    
     public String getName() {
         return name;
     }
@@ -44,5 +52,19 @@ abstract class Subject {
 
     public void setIsAbstract(boolean isAbstract) {
         this.isAbstract = isAbstract;
+    }
+
+    /**
+     * @return the type
+     */
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * @param type the type to set
+     */
+    public void setType(String type) {
+        this.type = type;
     }
 }

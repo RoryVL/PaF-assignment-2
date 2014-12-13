@@ -22,7 +22,8 @@ public class FileHandler {
         return file.substring(file.length() - 3);
     }
     
-    public boolean importFile(String path){
+    public Pattern importFile(String path){
+        Pattern p = new Pattern();
         Importer i = new TextFileImporter();
         String format = checkFileFormat(path);
         if(format.equals("obj")){
@@ -30,7 +31,7 @@ public class FileHandler {
         } else if(format.equals("txt")){
             i = new TextFileImporter();
         } else {
-            return false;
+            return p;
         }
         return i.importFile(path);
     }

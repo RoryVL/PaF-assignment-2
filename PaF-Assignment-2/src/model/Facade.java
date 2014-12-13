@@ -48,7 +48,13 @@ public class Facade {
     }
     
     public boolean importPattern(String path){
-        return fileHandler.importFile(path);
+        try{
+            Pattern p = fileHandler.importFile(path);
+            dataHandler.getAllPatterns().add(p);
+            return true;
+        } catch(Exception e){
+            return false;
+        }
     }
     
     public boolean addPattern(String name, String problem, String solution, String consequences, BufferedImage image){

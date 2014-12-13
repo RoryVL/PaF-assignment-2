@@ -5,6 +5,8 @@
  */
 package model.filehandler;
 
+import model.datahandler.Pattern;
+
 /**
  *
  * @author Izak
@@ -15,5 +17,5 @@ public abstract class Importer {
         
     }
     
-    public abstract boolean importFile(String path);
+    public abstract Pattern importFile(String path);
 }

@@ -5,6 +5,8 @@
  */
 package model.filehandler;
 
+import model.datahandler.Pattern;
+
 /**
  *
  * @author Izak
@@ -12,9 +14,9 @@ package model.filehandler;
 public class TextFileImporter extends Importer {
 
 	@Override
-	public boolean importFile(String path) {
-		// TODO Auto-generated method stub
-		return false;
+	public Pattern importFile(String path) {
+		Pattern p = new Pattern();
+		return p;
 	}
 
 }

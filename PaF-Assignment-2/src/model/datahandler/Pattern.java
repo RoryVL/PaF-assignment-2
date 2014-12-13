@@ -21,6 +21,10 @@ public class Pattern {
     private ArrayList<Context> allContexts = new ArrayList<>();
     private ArrayList<Participant> allParticipants = new ArrayList<>();
     
+    public Pattern(){
+        
+    }
+    
     public Pattern(String name, String problem, String solution, String consequences, BufferedImage image) {
         this.name = name;
         this.problem = problem;
