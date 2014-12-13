@@ -43,19 +43,20 @@ public class Facade {
     }
     
     public boolean exportPattern(String patternname, String filename, String path, String type){
-        
+        Pattern p = dataHandler.getPattern(patternname);
+        return fileHandler.exportFile(filename, type, path, p);
     }
     
     public boolean importPattern(String path){
-        
+        return fileHandler.importFile(path);
     }
     
     public boolean addPattern(String name, String problem, String solution, String consequences, BufferedImage image){
-        dataHandler.addPattern(name, problem, solution, consequences, image);
+        return dataHandler.addPattern(name, problem, solution, consequences, image);
     }
     
     public boolean deletePattern(String name){
-        
+        return dataHandler.deletePattern(name);
     }
 
     /**

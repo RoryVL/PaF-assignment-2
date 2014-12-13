@@ -6,6 +6,8 @@
 
 package paf.assignment.pkg2;
 
+import model.Facade;
+
 /**
  *
  * @author Rory
@@ -16,7 +18,8 @@ public class PaFAssignment2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Facade f = new Facade();
+        System.out.println("Test");
     }
     
 }
