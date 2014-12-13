@@ -39,13 +39,26 @@ public class DataHandler {
         return false;
     }
     
-    public void addPattern(String name, String problem, String solution, 
+    public boolean addPattern(String name, String problem, String solution, 
                                         String consequences, BufferedImage image){
+        for(Pattern p : allPatterns){
+            if(p.getName().equals(name))
+                return false;
+        }
         allPatterns.add(new Pattern(name, problem, solution, consequences, image));
+        return true;
     }
     
     public boolean deletePattern(Pattern p){
         return allPatterns.remove(p);
+    }
+    
+    public boolean deletePattern(String name){
+        for(Pattern p : allPatterns){
+            if(p.getName().equals(name))
+                return allPatterns.remove(p);
+        }
+        return false;
     }
     
     public Pattern getPattern(String name){
