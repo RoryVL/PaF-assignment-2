@@ -7,13 +7,14 @@
 package model.datahandler;
 
 import java.awt.image.BufferedImage;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Rory
  */
-public class Pattern {
+public class Pattern implements Serializable {
     private String name, problem, solution, consequences;
     private BufferedImage image;
 

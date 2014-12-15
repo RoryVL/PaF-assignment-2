@@ -6,11 +6,13 @@
 
 package model.datahandler;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Rory
  */
-public class Subject {
+public class Subject implements Serializable{
     private String type, name, visibility;
     private boolean isStatic, isAbstract;
 

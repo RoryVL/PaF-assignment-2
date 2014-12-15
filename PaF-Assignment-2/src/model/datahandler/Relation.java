@@ -6,11 +6,13 @@
 
 package model.datahandler;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Rory
  */
-public class Relation {
+public class Relation implements Serializable{
     private String sortRelation;
     private Participant relatedParticipant;
     

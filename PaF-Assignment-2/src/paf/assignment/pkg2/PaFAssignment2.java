@@ -27,7 +27,7 @@ public class PafAssignment2 {
 		Facade f = new Facade();
 		System.out.println("Test");
 		
-		/*Context c1 = new Scope("scope1");
+		Context c1 = new Scope("scope1");
 		Context c2 = new Purpose("purpose1");
                 Pattern p = new Pattern("pName", "pProblem", "pSolution", "pConsequences", null);
 		p.addContext(c1);
@@ -38,9 +38,16 @@ public class PafAssignment2 {
                 p.getAllParticipants().get(0).addSubject("method", "methodName", "methodVisibility", false, false);
                 p.getAllParticipants().get(0).addSubject("attribute", "attributeName", "attributeVisibility", false, false);
                 
-                f.getFileHandler().exportFile("test", "objectfile", "C:\\Users\\Izak\\Desktop", p);*/
+                f.getFileHandler().exportFile("test", "objectfile", "C:\\Users\\Izak\\Desktop", p);
                 
-                f.getFileHandler().importFile("C:\\Users\\Izak\\Desktop\\name.obj");
+                f.importPattern("C:\\Users\\Izak\\Desktop\\name.obj");
+                for(Pattern ppp: f.getDataHandler().getAllPatterns()){
+                
+                    System.out.println(ppp.getName()+"sdfgv");
+                    for(Participant asd: ppp.getAllParticipants()){
+                        System.out.println(asd.getName());
+                    }
+                }
 		
 	}
 

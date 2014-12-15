@@ -6,13 +6,14 @@
 
 package model.datahandler;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Rory
  */
-public class Scope extends Context {
+public class Scope extends Context implements Serializable {
     private ArrayList<Scope> allSubScopes = new ArrayList<>();
 
     public Scope(String name) {

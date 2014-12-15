@@ -6,13 +6,14 @@
 
 package model.datahandler;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Rory
  */
-public class Participant {
+public class Participant implements Serializable{
     private String name, visibility;
     private boolean isInterface, isStatic, isAbstract;
 

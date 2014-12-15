@@ -26,13 +26,18 @@ public class FileHandler {
         Pattern p = new Pattern();
         Importer i = new TextFileImporter();
         String format = checkFileFormat(path);
+        System.out.println("test 1");
         if(format.equals("obj")){
             i = new ObjectImporter();
+            System.out.println("test 2");
         } else if(format.equals("txt")){
             i = new TextFileImporter();
+            System.out.println("test 3");
         } else {
+            System.out.println("test 4");
             return p;
         }
+        System.out.println("test 5");
         return i.importFile(path);
     }
     

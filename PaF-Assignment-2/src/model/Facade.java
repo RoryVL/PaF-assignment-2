@@ -50,9 +50,14 @@ public class Facade {
     public boolean importPattern(String path){
         try{
             Pattern p = fileHandler.importFile(path);
+            System.out.println("1");
+            System.out.println(p.getName());
             dataHandler.getAllPatterns().add(p);
+            System.out.println(p.getName() + "gfdcagsdhkf");
             return true;
         } catch(Exception e){
+            System.out.println("2");
+            e.printStackTrace();
             return false;
         }
     }
