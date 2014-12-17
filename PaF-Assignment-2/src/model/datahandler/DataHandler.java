@@ -19,15 +19,12 @@ public class DataHandler {
     
     public DataHandler(){}
     
-    public boolean addContext(String name, String type){
+    public boolean addContext(Context context){
         for(Context c : allContexts){
-            if(c.getName().equals(name))
+            if(c.getName().equals(context.getName()))
                 return false;
         }
-        if(type.equals("Scope"))
-            allContexts.add(new Scope(name));
-        else if(type.equals("Purpose"))
-            allContexts.add(new Purpose(name));
+        allContexts.add(context);
         return true;
     }
     

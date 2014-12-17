@@ -7,6 +7,8 @@
 package model.filehandler;
 
 import java.io.File;
+import java.util.ArrayList;
+import model.datahandler.Context;
 import model.datahandler.Pattern;
 
 /**
@@ -39,6 +41,11 @@ public class FileHandler {
         }
         System.out.println("test 5");
         return i.importFile(path);
+    }
+    
+    public void exportContexts(ArrayList<Context> allContexts){
+        ObjectExporter oe = new ObjectExporter();
+        oe.exportContexts(allContexts);
     }
     
     public boolean exportFile(String name, String type, String path, Pattern pattern){

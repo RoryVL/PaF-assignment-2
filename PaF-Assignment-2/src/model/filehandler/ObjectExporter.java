@@ -8,6 +8,8 @@ package model.filehandler;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import model.datahandler.Context;
 
 import model.datahandler.Pattern;
 
@@ -29,5 +31,16 @@ public class ObjectExporter extends Exporter {
 			return false;
 		}
 	}
+        
+        public void exportContexts(ArrayList<Context> allContexts){
+            try {
+                FileOutputStream fout = new FileOutputStream("C:\\Users\\Izak\\Desktop\\Context.obj");
+                ObjectOutputStream oos = new ObjectOutputStream(fout);
+                oos.writeObject(allContexts);
+                oos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
 }

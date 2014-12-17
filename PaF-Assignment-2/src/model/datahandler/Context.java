@@ -12,6 +12,7 @@ package model.datahandler;
  */
 public abstract class Context {
     protected String name;
+    protected Context superContext;
     
     public String getName(){
         return name;
@@ -19,5 +20,14 @@ public abstract class Context {
     
     public void setName(String name){
         this.name = name;
+    }
+    
+    public abstract void setSuperContext(Context superContext);
+
+    /**
+     * @return the superContext
+     */
+    public Context getSuperContext() {
+        return superContext;
     }
 }

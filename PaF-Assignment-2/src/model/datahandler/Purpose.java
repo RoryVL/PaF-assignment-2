@@ -14,26 +14,33 @@ import java.util.ArrayList;
  * @author Rory
  */
 public class Purpose extends Context implements Serializable{
-    public ArrayList<Purpose> allSubPurposes = new ArrayList<>();
+    //public ArrayList<Purpose> allSubPurposes = new ArrayList<>();
 
     public Purpose(String name) {
         this.name = name;
     }
     
-    public boolean addSubPurpose(Purpose p){
+    @Override
+    public void setSuperContext(Context superContext) {
+        if(superContext instanceof Purpose && superContext != this){
+            this.superContext = superContext;
+        }
+    }
+    
+    /*public boolean addSubPurpose(Purpose p){
         for(Purpose pu : allSubPurposes){
             if(pu==p)
                 return false;
         }
         allSubPurposes.add(p);
         return true;
-    }
+    }*/
     
-    public boolean deleteSubPurpose(Purpose p){
+    /*public boolean deleteSubPurpose(Purpose p){
         return allSubPurposes.remove(p);
-    }
+    }*/
     
-    public ArrayList<Purpose> getAllSubPurposes() {
+    /*public ArrayList<Purpose> getAllSubPurposes() {
         return allSubPurposes;
-    }
+    }*/
 }

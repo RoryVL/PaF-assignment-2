@@ -15,7 +15,6 @@ import model.filehandler.FileHandler;
 /**
  *
  * @author Izak
- * All methods have still to be implemented
  */
 public class Facade {
     private DataHandler dataHandler;
@@ -42,7 +41,7 @@ public class Facade {
         return dataHandler.getPattern(name);
     }
     
-    public boolean exportPattern(String patternname, String filename, String path, String type){
+    public boolean exportPattern(String filename, String type, String path, String patternname){
         Pattern p = dataHandler.getPattern(patternname);
         return fileHandler.exportFile(filename, type, path, p);
     }
