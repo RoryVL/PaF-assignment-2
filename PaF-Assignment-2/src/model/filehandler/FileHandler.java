@@ -14,8 +14,14 @@ import model.datahandler.Pattern;
  * @author Rory
  */
 public class FileHandler {
-    public FileHandler(){
-        
+    private static FileHandler instance = null;
+    
+    public FileHandler(){}
+    
+    public static FileHandler getInstance(){
+        if(instance == null)
+            instance = new FileHandler();
+        return instance;
     }
     
     public String checkFileFormat(String file){

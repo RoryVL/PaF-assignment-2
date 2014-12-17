@@ -7,33 +7,27 @@
 package model.datahandler;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 /**
  *
  * @author Rory
  */
 public class Scope extends Context implements Serializable {
-    private ArrayList<Scope> allSubScopes = new ArrayList<>();
+    private Scope superScope;
 
     public Scope(String name) {
         this.name = name;
     }
     
-    public boolean addSubScope(Scope s){
-        for(Scope sc : allSubScopes){
-            if(sc==s)
-                return false;
-        }
-        allSubScopes.add(s);
-        return true;
+    public void addSuperScope(Scope s){
+        this.superScope = s;
     }
     
-    public boolean deleteSubScope(Scope s){
-        return allSubScopes.remove(s);
+    public void deleteSuperScope(){
+        superScope = null;
     }
     
-    public ArrayList<Scope> getAllSubScopes() {
-        return allSubScopes;
+    public Scope getSuperScope() {
+        return superScope;
     }
 }

@@ -16,8 +16,15 @@ import java.util.ArrayList;
 public class DataHandler {
     private ArrayList<Context> allContexts = new ArrayList<>();
     private ArrayList<Pattern> allPatterns = new ArrayList<>();
+    private static DataHandler instance = null;
     
-    public DataHandler(){}
+    protected DataHandler(){}
+    
+    public static DataHandler getInstance(){
+        if(instance == null)
+            instance = new DataHandler();
+        return instance;
+    }
     
     public boolean addContext(String name, String type){
         for(Context c : allContexts){

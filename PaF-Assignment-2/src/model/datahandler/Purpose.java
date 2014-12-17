@@ -14,26 +14,21 @@ import java.util.ArrayList;
  * @author Rory
  */
 public class Purpose extends Context implements Serializable{
-    public ArrayList<Purpose> allSubPurposes = new ArrayList<>();
+    public Purpose superPurpose = null;
 
     public Purpose(String name) {
         this.name = name;
     }
     
-    public boolean addSubPurpose(Purpose p){
-        for(Purpose pu : allSubPurposes){
-            if(pu==p)
-                return false;
-        }
-        allSubPurposes.add(p);
-        return true;
+    public void addSuperPurpose(Purpose p){
+        this.superPurpose = p;
     }
     
-    public boolean deleteSubPurpose(Purpose p){
-        return allSubPurposes.remove(p);
+    public void deleteSuperPurpose(){
+        superPurpose = null;
     }
     
-    public ArrayList<Purpose> getAllSubPurposes() {
-        return allSubPurposes;
+    public Purpose getSuperPurpose() {
+        return superPurpose;
     }
 }

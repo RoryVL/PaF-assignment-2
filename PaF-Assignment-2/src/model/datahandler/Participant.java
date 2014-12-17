@@ -30,6 +30,8 @@ public class Participant implements Serializable{
     
     public boolean addSubject(String type, String name, String visibility, boolean isStatic, 
                                                 boolean isAbstract){
+        if(!type.equals("Method") || !type.equals("Attribute"))
+            return false;
         for(Subject s : allSubjects){
             if(s.getName().equals(name))
                 return false;
