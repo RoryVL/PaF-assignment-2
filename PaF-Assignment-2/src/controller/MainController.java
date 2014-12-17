@@ -6,16 +6,10 @@
 
 package controller;
 
-import view.EditorView;
-
 /**
  *
  * @author Rory
  */
-public class EditorController {
-    EditorView ev;
+public class MainController {
     
-    public EditorController(){
-        ev = new EditorView();
-    }
 }

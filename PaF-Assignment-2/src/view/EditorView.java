@@ -2,19 +2,20 @@ package view;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import model.datahandler.Purpose;
+import model.datahandler.Scope;
 
 public class EditorView extends JFrame implements ActionListener{
 	
 	//Deze combobox moet gevuld worden met alle scopes ipv ints, maar dat moet via de controller
-	private JComboBox<Integer> scopeComboBox;
+	private JComboBox<Scope> scopeComboBox;
 	//Idem, maar dan voor de purposes
-	private JComboBox<Integer> purposeComboBox;
+	private JComboBox<Purpose> purposeComboBox;
 	//Idem, maar dan voor patterns
 	private JComboBox<Integer> patternComboBox;
 	
@@ -25,16 +26,16 @@ public class EditorView extends JFrame implements ActionListener{
 	public EditorView(){
 		
 		JPanel panel = new JPanel();
-        add(panel);
+                add(panel);
 		
 		//ook hiet scopes ipv int
-		scopeComboBox = new JComboBox<Integer>();
+		scopeComboBox = new JComboBox<Scope>();
 		//for-loop die de ComboBox vult
 		panel.add(scopeComboBox);
 		scopeComboBox.addActionListener(this);
 		
 		//hier hetzelfde verhaal als bij scopes maar nu purposes
-		purposeComboBox = new JComboBox<Integer>();
+		purposeComboBox = new JComboBox<Purpose>();
 		panel.add(purposeComboBox);
 		purposeComboBox.addActionListener(this);
 		

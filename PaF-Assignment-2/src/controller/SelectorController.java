@@ -6,16 +6,18 @@
 
 package controller;
 
-import view.EditorView;
+import view.SelectorView;
 
 /**
  *
  * @author Rory
  */
-public class EditorController {
-    EditorView ev;
-    
-    public EditorController(){
-        ev = new EditorView();
+public class SelectorController {
+    SelectorView sv;
+
+    public SelectorController() {
+        sv = new SelectorView();
     }
+    
+    
 }

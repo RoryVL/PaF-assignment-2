@@ -23,9 +23,9 @@ public class ObjectImporter extends Importer {
             Pattern p = new Pattern();
             System.out.println("test test 1");
             try {
-                    System.out.println("test test 2");
+                System.out.println("test test 2");
 		FileInputStream fis = new FileInputStream(path);
-                    System.out.println("path " + path);
+                System.out.println("path " + path);
                 System.out.println("test test 3");
                 ObjectInputStream ois = new ObjectInputStream(fis);
                 System.out.println("test test 4");

@@ -6,7 +6,6 @@
 package model;
 
 import java.awt.image.BufferedImage;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import model.datahandler.DataHandler;
 import model.datahandler.Pattern;
@@ -17,14 +16,21 @@ import model.filehandler.FileHandler;
  * @author Izak
  */
 public class Facade {
-    private DataHandler dataHandler;
-    private FileHandler fileHandler;
+    private static DataHandler dataHandler;
+    private static FileHandler fileHandler;
+    private static Facade instance = null; 
     
-    public Facade(){
-        DataHandler d = new DataHandler();
-        FileHandler f = new FileHandler();
-        setDataHandler(d);
-        setFileHandler(f);
+    public static Facade getInstance(){
+        if(instance == null){
+            instance = new Facade();
+            dataHandler = DataHandler.getInstance();
+            fileHandler = FileHandler.getInstance();
+        } 
+        return instance;
+        
+    }
+    
+    protected Facade(){
     }
     
     public ArrayList<String> getAllPaternNames(){
@@ -67,20 +73,6 @@ public class Facade {
     
     public boolean deletePattern(String name){
         return dataHandler.deletePattern(name);
-    }
-
-    /**
-     * @return the dataHandler
-     */
-    public DataHandler getDataHandler() {
-        return dataHandler;
-    }
-
-    /**
-     * @param dataHandler the dataHandler to set
-     */
-    public void setDataHandler(DataHandler dataHandler) {
-        this.dataHandler = dataHandler;
     }
 
     /**

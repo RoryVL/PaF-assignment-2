@@ -17,7 +17,7 @@ public class ParticipantView extends JFrame implements ActionListener {
 	
 	public ParticipantView(){
 		JPanel panel = new JPanel();
-        add(panel);
+                add(panel);
 		
 		JLabel nameLabel = new JLabel("Name");
 		panel.add(nameLabel);
