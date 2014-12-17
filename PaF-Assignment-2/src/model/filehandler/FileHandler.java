@@ -65,4 +65,8 @@ public class FileHandler {
     	}
     	return e.exportFile(name, path, pattern);
     }
+    
+    public static void setInstance(FileHandler fh){
+        instance = fh;
+    }
 }

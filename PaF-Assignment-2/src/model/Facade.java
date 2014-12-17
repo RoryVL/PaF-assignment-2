@@ -86,6 +86,16 @@ public class Facade {
      * @param fileHandler the fileHandler to set
      */
     public void setFileHandler(FileHandler fileHandler) {
-        this.fileHandler = fileHandler;
+        FileHandler.setInstance(fileHandler);
     }
+
+    public DataHandler getDataHandler() {
+        return dataHandler;
+    }
+
+    public void setDataHandler(DataHandler dataHandler) {
+        DataHandler.setInstance(dataHandler);
+    }
+    
+    
 }

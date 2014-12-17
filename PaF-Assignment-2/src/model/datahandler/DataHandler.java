@@ -44,7 +44,7 @@ public class DataHandler {
     }
 
     public boolean addPattern(String name, String problem, String solution, 
-                                        String consequences, BufferedImage image){
+                                    String consequences, BufferedImage image){
         for(Pattern p : allPatterns){
             if(p.getName().equals(name))
                 return false;
@@ -97,5 +97,9 @@ public class DataHandler {
             }
         }
         return s;
+    }
+    
+    public static void setInstance(DataHandler dh){
+        instance = dh;
     }
 }
